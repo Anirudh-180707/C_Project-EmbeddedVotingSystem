@@ -1,0 +1,80 @@
+{
+  "version": 1,
+  "author": "Voting System",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-mega", "id": "mega", "top": -20, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd",
+      "top": -207.77,
+      "left": -281.6,
+      "attrs": { "pins": "full" }
+    },
+    {
+      "type": "wokwi-membrane-keypad",
+      "id": "keypad",
+      "top": -347.6,
+      "left": 466.4,
+      "attrs": { "keys": "123A456B789C*0#D" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "buttonC1",
+      "top": 400,
+      "left": 420,
+      "attrs": { "color": "red", "label": "Candidate 1" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "buttonC2",
+      "top": 400,
+      "left": 560,
+      "attrs": { "color": "blue", "label": "Candidate 2" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "buttonC3",
+      "top": 400,
+      "left": 700,
+      "attrs": { "color": "green", "label": "Candidate 3" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "buttonNOTA",
+      "top": 400,
+      "left": 840,
+      "attrs": { "color": "yellow", "label": "NOTA" }
+    }
+  ],
+  "connections": [
+    [ "mega:12", "lcd:RS", "green", [] ],
+    [ "mega:11", "lcd:E", "green", [] ],
+    [ "mega:5", "lcd:D4", "green", [] ],
+    [ "mega:4", "lcd:D5", "green", [] ],
+    [ "mega:3", "lcd:D6", "green", [] ],
+    [ "mega:2", "lcd:D7", "green", [] ],
+    [ "mega:5V", "lcd:VDD", "red", [] ],
+    [ "mega:GND.1", "lcd:VSS", "black", [] ],
+    [ "mega:GND.1", "lcd:RW", "black", [] ],
+    [ "mega:GND.1", "lcd:K", "black", [] ],
+    [ "mega:5V", "lcd:A", "red", [] ],
+    [ "mega:22", "keypad:R1", "orange", [] ],
+    [ "mega:24", "keypad:R2", "orange", [] ],
+    [ "mega:26", "keypad:R3", "orange", [] ],
+    [ "mega:28", "keypad:R4", "orange", [] ],
+    [ "mega:30", "keypad:C1", "purple", [] ],
+    [ "mega:32", "keypad:C2", "purple", [] ],
+    [ "mega:34", "keypad:C3", "purple", [] ],
+    [ "mega:36", "keypad:C4", "purple", [] ],
+    [ "mega:38", "buttonC1:1.l", "orange", [] ],
+    [ "mega:GND.2", "buttonC1:2.l", "black", [] ],
+    [ "mega:40", "buttonC2:1.l", "orange", [] ],
+    [ "mega:GND.2", "buttonC2:2.l", "black", [] ],
+    [ "mega:42", "buttonC3:1.l", "orange", [] ],
+    [ "mega:GND.2", "buttonC3:2.l", "black", [] ],
+    [ "mega:44", "buttonNOTA:1.l", "orange", [] ],
+    [ "mega:GND.2", "buttonNOTA:2.l", "black", [] ]
+  ],
+  "dependencies": {}
+}
